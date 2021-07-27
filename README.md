@@ -7,7 +7,7 @@ Supports:
 - [x] if/else conditions
 - [ ] loops
 
-Example:
+### Example:
 ```
 UIMenu {
     UIAction("Open") { ... }
@@ -16,4 +16,19 @@ UIMenu {
         UIAction("Delete", icon: "xmark.bin") { ... }
     }
 }
+```
+
+## Install
+
+### Swift Package Manager
+
+The Swift Package Manager is a tool for managing the distribution of Swift code. It’s integrated with the Swift build system to automate the process of downloading, compiling, and linking dependencies.
+
+Once you have your Swift package set up, adding SwiftDI as a dependency is as easy as adding it to the dependencies value of your Package.swift:
+
+Swift 5
+```
+dependencies: [
+    .package(url: "https://github.com/achernoprudov/MenuBuilder.git", from: "1.0.0")
+]
 ```
