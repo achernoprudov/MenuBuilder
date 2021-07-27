@@ -1,5 +1,8 @@
+import UIKit
 
-
-struct MenuBuilder {
-    var text = "Hello, World!"
+extension UIMenu {
+    convenience init(@MenuElementsBuilder builder: () -> [UIMenuElement]) {
+        let children = builder()
+        self.init(children: children)
+    }
 }
