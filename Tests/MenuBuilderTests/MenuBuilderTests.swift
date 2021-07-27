@@ -1,11 +1,14 @@
-    import XCTest
-    @testable import MenuBuilder
+import XCTest
+@testable import MenuBuilder
 
-    final class MenuBuilderTests: XCTestCase {
-        func testExample() {
-            // This is an example of a functional test case.
-            // Use XCTAssert and related functions to verify your tests produce the correct
-            // results.
-//            XCTAssertEqual(MenuBuilder().text, "Hello, World!")
+final class MenuBuilderTests: XCTestCase {
+    func test_buildMenu_withActions() {
+        let menu = UIMenu {
+            UIAction("Foo", icon: "eye") { _ in }
+            UIAction("Bar", icon: "eye") { _ in }
         }
+        
+        XCTAssertEqual(menu.children[0].title, "Foo")
+        XCTAssertEqual(menu.children[1].title, "Bar")
     }
+}
