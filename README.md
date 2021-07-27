@@ -1,5 +1,7 @@
 # MenuBuilder
 
+[![Unit Test](https://github.com/achernoprudov/MenuBuilder/actions/workflows/unit-test.yml/badge.svg?branch=master)](https://github.com/achernoprudov/MenuBuilder/actions/workflows/unit-test.yml)
+
 DSL for building `UIMenu` in a simple way.
 
 Supports: 
