@@ -28,4 +28,36 @@ final class MenuBuilderTests: XCTestCase {
         
         XCTAssertEqual(submenu?.children[0].title, "Bar")
     }
+    
+    func test_buildMenu_ifConditional_isTrue() {
+        // actions
+        let addBarItem = true
+        
+        let menu = UIMenu {
+            UIAction("Foo", icon: "eye") { _ in }
+            if addBarItem {
+                UIAction("Bar", icon: "eye") { _ in }
+            }
+        }
+        
+        // assertions
+        XCTAssertNotNil(menu.children[0])
+        XCTAssertNotNil(menu.children[1])
+    }
+    
+    func test_buildMenu_ifConditional_isFalse() {
+        // actions
+        let addBarItem = false
+        
+        let menu = UIMenu {
+            UIAction("Foo", icon: "eye") { _ in }
+            if addBarItem {
+                UIAction("Bar", icon: "eye") { _ in }
+            }
+        }
+        
+        // assertions
+        XCTAssertNotNil(menu.children[0])
+        XCTAssertNil(menu.children[1])
+    }
 }
