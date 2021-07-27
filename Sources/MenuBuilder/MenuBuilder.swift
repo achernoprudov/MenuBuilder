@@ -1,8 +1,21 @@
 import UIKit
 
-extension UIMenu {
+public extension UIMenu {
+    
+    /// Builds UIMenu where `children` parameters builds in DSL format
+    ///
+    /// Example:
+    /// ```
+    /// UIMenu {
+    ///     UIAction("Open") { ... }
+    ///     UIMenu("Edit") {
+    ///         UIAction("Duplicate") { ... }
+    ///         UIAction("Delete") { ... }
+    ///     }
+    /// }
+    /// ```
     convenience init(
-        title: String = "",
+        _ title: String = "",
         image: UIImage? = nil,
         identifier: UIMenu.Identifier? = nil,
         options: UIMenu.Options = [],

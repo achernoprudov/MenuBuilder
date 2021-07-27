@@ -17,7 +17,7 @@ final class MenuBuilderTests: XCTestCase {
     func test_buildSubMenu_withTitle() {
         // actions
         let menu = UIMenu {
-            UIMenu(title: "Submenu") {
+            UIMenu("Submenu") {
                 UIAction("Bar", icon: "eye") { _ in }
             }
         }
