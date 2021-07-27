@@ -3,8 +3,9 @@
 DSL for building `UIMenu` in a simple way.
 
 Supports: 
-- hierarhical menu
-- if/else conditions
+- [x] hierarhical menu
+- [x] if/else conditions
+- [] loops
 
 Example:
 ```
