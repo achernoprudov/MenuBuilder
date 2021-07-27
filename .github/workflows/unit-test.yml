@@ -15,8 +15,6 @@ jobs:
     - uses: actions/checkout@v2
     - name: Build
       run: swift build -v
-    - name: Switch to Xcode 11
-      run: sudo xcode-select --switch /Applications/Xcode_11.1.app
     - name: Generate xcodeproj
       run: swift package generate-xcodeproj
     - name: Run tests
