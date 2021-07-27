@@ -93,7 +93,7 @@ final class MenuBuilderTests: XCTestCase {
         }
         
         // assertions
-        XCTAssertEqual(menu.children[safe: 0]?.title, "Else")
+        XCTAssertEqual(menu.children[safe: 0]?.title, "Bar")
         XCTAssertEqual(menu.children.count, 1)
     }
 }
