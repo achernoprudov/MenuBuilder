@@ -10,8 +10,8 @@ final class MenuBuilderTests: XCTestCase {
         }
         
         // assertions
-        XCTAssertEqual(menu.children[0].title, "Foo")
-        XCTAssertEqual(menu.children[1].title, "Bar")
+        XCTAssertEqual(menu.children[safe: 0]?.title, "Foo")
+        XCTAssertEqual(menu.children[safe: 1]?.title, "Bar")
     }
     
     func test_buildSubMenu_withTitle() {
@@ -26,7 +26,7 @@ final class MenuBuilderTests: XCTestCase {
         let submenu = menu.children[0] as? UIMenu
         XCTAssertNotNil(submenu)
         
-        XCTAssertEqual(submenu?.children[0].title, "Bar")
+        XCTAssertEqual(submenu?.children[safe: 0]?.title, "Bar")
     }
     
     func test_buildMenu_ifConditional_isTrue() {
@@ -41,8 +41,8 @@ final class MenuBuilderTests: XCTestCase {
         }
         
         // assertions
-        XCTAssertNotNil(menu.children[0])
-        XCTAssertNotNil(menu.children[1])
+        XCTAssertNotNil(menu.children[safe: 0])
+        XCTAssertNotNil(menu.children[safe: 1])
     }
     
     func test_buildMenu_ifConditional_isFalse() {
@@ -57,7 +57,7 @@ final class MenuBuilderTests: XCTestCase {
         }
         
         // assertions
-        XCTAssertNotNil(menu.children[0])
-        XCTAssertNil(menu.children[1])
+        XCTAssertNotNil(menu.children[safe: 0])
+        XCTAssertNil(menu.children[safe: 1])
     }
 }
